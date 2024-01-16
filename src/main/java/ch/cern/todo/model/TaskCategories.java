@@ -13,9 +13,9 @@ public class TaskCategories {
     @Id
     @Column(name = "CATEGORY_ID")
     private Integer categoryId;
-    @Column(name = "CATEGORY_NAME")
+    @Column(name = "CATEGORY_NAME" ,length = 100)
     private String categoryName;
-    @Column(name = "CATEGORY_DESCRIPTION")
+    @Column(name = "CATEGORY_DESCRIPTION" ,length = 500)
     private String categoryDescription;
 
     public Integer getCategoryId() {

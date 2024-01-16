@@ -11,9 +11,9 @@ public class Tasks {
     @Id
     @Column(name = "TASK_ID")
     private Integer taskId;
-    @Column(name = "TASK_NAME")
+    @Column(name = "TASK_NAME",length = 100)
     private String taskName;
-    @Column(name = "TASK_DESCRIPTION")
+    @Column(name = "TASK_DESCRIPTION",length = 500)
     private String taskDescription;
     @Column(name = "DEADLINE")
     private Date deadline;

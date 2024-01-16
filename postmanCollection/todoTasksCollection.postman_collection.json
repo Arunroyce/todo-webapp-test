@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "8474b979-2ff1-4a03-a31a-33733393b9ea",
+		"name": "todoTasksCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32344941"
+	},
+	"item": [
+		{
+			"name": "AddTaskCategories-DataAdd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"categoryId\": 2000,\r\n        \"categoryName\": \"Particle Physics Experiments\",\r\n        \"categoryDescription\": \"Category Description: Investigating subatomic particle behavior.\"\r\n    },\r\n    {\r\n        \"categoryId\": 3000,\r\n        \"categoryName\": \"Accelerator Operations\",\r\n        \"categoryDescription\": \"Managing Large Hadron Collider operations.\"\r\n    },\r\n    {\r\n        \"categoryId\": 4000,\r\n        \"categoryName\": \"Data Repositories\",\r\n        \"categoryDescription\": \"Handling experimental data storage.\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoriesController/persistListOfTaskCategories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoriesController",
+						"persistListOfTaskCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 123,\r\n    \"taskName\" : \"Collect and preprocess ATLAS data.\",\r\n    \"taskDescription\" : \"Task involves collecting raw data from the ATLAS detector and performing preprocessing for analysis.\",\r\n    \"deadline\" : \"22-01-2015 10:15:55\",\r\n    \"taskCategories\" : {\r\n        \"categoryId\" : 2000,\r\n        \"categoryName\" : \"Particle Physics Experiments\",\r\n        \"categoryDescription\" : \"Investigating subatomic particle behavior.\"\r\n    }\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasksController/createTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasksController",
+						"createTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editTask",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\" : \"Testing Update\",\r\n    \"deadline\" : \"24-03-2024 10:15:55\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasksController/editTaskDeadline?taskId=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasksController",
+						"editTaskDeadline"
+					],
+					"query": [
+						{
+							"key": "taskId",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tasksController/deleteTask?taskId=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasksController",
+						"deleteTask"
+					],
+					"query": [
+						{
+							"key": "taskId",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
